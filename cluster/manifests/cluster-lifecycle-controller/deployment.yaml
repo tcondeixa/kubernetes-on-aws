@@ -32,6 +32,8 @@ spec:
         effect: NoSchedule
       - key: node.kubernetes.io/not-ready
         operator: Exists
+      - key: decommission-pending
+        effect: NoSchedule
       containers:
       - name: cluster-lifecycle-controller
         image: registry.opensource.zalan.do/teapot/cluster-lifecycle-controller:master-22
